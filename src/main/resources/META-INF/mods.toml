@@ -5,6 +5,8 @@ license="MIT License"
 [[mods]] #mandatory
 modId="feature_nbt_deadlock_be_gone" #mandatory
 version="${file.jarVersion}" #mandatory
+logoFile="FNBTDBG.png"
+logoBlur=false
 displayName="Feature NBT Deadlock Be Gone" #mandatory
 authors="TelepathicGrunt"
 description='''
