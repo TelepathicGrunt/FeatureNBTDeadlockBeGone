@@ -16,7 +16,7 @@ publishing {
             }
 
             pom {
-                name = 'FeatureNBTDeadlockBeGone'
+                name = 'FeatureNBTDeadlockBeGone-Fabric'
                 description = 'Fixes https://bugs.mojang.com/browse/MC-246262'
                 url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone'
 

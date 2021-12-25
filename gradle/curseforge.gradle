@@ -7,7 +7,7 @@ String fileContents = new File("./", "CHANGELOG.md").text
 curseforge {
     project {
         apiKey = "$System.env.CURSEFORGEKEY"
-        id = "363949"
+        id = "560323"
         releaseType = "release"
         changelogType = 'markdown'
         changelog = fileContents
