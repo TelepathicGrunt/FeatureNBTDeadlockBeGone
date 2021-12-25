@@ -8,20 +8,14 @@ curseforge {
     project {
         apiKey = "$System.env.CURSEFORGEKEY"
         id = "363949"
-        releaseType = "beta"
+        releaseType = "release"
         changelogType = 'markdown'
         changelog = fileContents
         addGameVersion("1.18.1")
         addGameVersion("Fabric")
 
-        relations {
-            requiredDependency 'cloth-config'
-            requiredDependency 'cardinal-components'
-            requiredDependency 'fabric-api'
-        }
-
         mainArtifact(remapJar) {
-            displayName = "The Bumblezone v${project.mod_version} (${project.minecraft_version} MC)"
+            displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.minecraft_version} MC)"
         }
 
         afterEvaluate {

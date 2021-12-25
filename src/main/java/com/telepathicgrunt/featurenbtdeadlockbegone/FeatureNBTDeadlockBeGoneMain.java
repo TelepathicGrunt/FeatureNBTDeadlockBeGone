@@ -1,10 +1,11 @@
 package com.telepathicgrunt.featurenbtdeadlockbegone;
 
-import net.minecraftforge.fml.common.Mod;
+import net.fabricmc.api.ModInitializer;
 
-@Mod(FeatureNBTDeadlockBeGoneMain.MODID)
-public class FeatureNBTDeadlockBeGoneMain {
+public class FeatureNBTDeadlockBeGoneMain implements ModInitializer {
 
     public static final String MODID = "feature_nbt_deadlock_be_gone";
-    public FeatureNBTDeadlockBeGoneMain() {}
+
+    @Override
+    public void onInitialize() {}
 }

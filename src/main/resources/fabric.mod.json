@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "feature_nbt_deadlock_be_gone",
+  "version": "$version",
+
+  "name": "Feature NBT Deadlock Be Gone - Fabric",
+  "description": "Fixes https://bugs.mojang.com/browse/MC-246262",
+  "authors": [
+    "TelepathicGrunt"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-bumblezone-fabric",
+    "sources": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone",
+    "issues": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/issues"
+  },
+
+  "license": "MIT",
+  "icon": " ",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.telepathicgrunt.featurenbtdeadlockbegone.FeatureNBTDeadlockBeGoneMain"
+    ]
+  },
+  "mixins": [
+    "feature_nbt_deadlock_be_gone.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "minecraft": ">=1.18.1",
+    "fabric": ">=0.43.1"
+  },
+  "custom": {
+    "notify_gradle_properties_url": "https://raw.githubusercontent.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/fabric-1.18/gradle.properties",
+    "notify_gradle_properties_key": "mod_version"
+  }
+}
