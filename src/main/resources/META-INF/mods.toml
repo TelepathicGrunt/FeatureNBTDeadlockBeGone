@@ -1,0 +1,18 @@
+modLoader="javafml" #mandatory
+loaderVersion="[38,)" #mandatory
+license="MIT License"
+
+[[mods]] #mandatory
+modId="feature_nbt_deadlock_be_gone" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Feature NBT Deadlock Be Gone" #mandatory
+authors="TelepathicGrunt"
+description='''
+Fixes https://bugs.mojang.com/browse/MC-246262
+'''
+
+# makes sure our mod does not be attempted to be ran on older version of Minecraft and explodes
+[[dependencies.feature_nbt_deadlock_be_gone]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18, 1.19)"

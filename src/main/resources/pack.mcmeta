@@ -1,0 +1,7 @@
+{
+    "pack": {
+        "description": "feature_nbt_deadlock_be_gone resources",
+        "pack_format": 8,
+        "_comment": "Fixes https://bugs.mojang.com/browse/MC-246262"
+    }
+}

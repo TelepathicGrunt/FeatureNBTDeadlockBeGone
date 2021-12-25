@@ -1,0 +1,46 @@
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+
+            pom {
+                name = 'FeatureNBTDeadlockBeGone'
+                description = 'Fixes https://bugs.mojang.com/browse/MC-246262'
+                url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone'
+
+                scm {
+                    connection = 'git:https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone.git'
+                    developerConnection = 'git:https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone.git'
+                    url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone'
+                }
+
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/LICENSE'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'telepathic_grunt'
+                        name = 'TelepathicGrunt'
+                        email = 'asarnesespam@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri("https://nexus.resourcefulbees.com/repository/telepathicgrunt/")
+            credentials {
+                username "$System.env.MAVEN_USER"
+                password "$System.env.MAVEN_PASS"
+            }
+        }
+    }
+}

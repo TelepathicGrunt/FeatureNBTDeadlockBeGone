@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.telepathicgrunt.featurenbtdeadlockbegone.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "feature_nbt_deadlock_be_gone.refmap.json",
+  "mixins": [
+    "StructureTemplateMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
