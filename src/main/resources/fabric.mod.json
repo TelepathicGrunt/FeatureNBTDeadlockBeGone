@@ -15,7 +15,7 @@
   },
 
   "license": "MIT",
-  "icon": " ",
+  "icon": "assets/feature_nbt_deadlock_be_gone/FNBTDBG.png",
 
   "environment": "*",
   "entrypoints": {
