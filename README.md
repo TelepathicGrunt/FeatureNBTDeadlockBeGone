@@ -4,7 +4,7 @@ Fixes deadlocks with generating nbt during worldgen
 To use in dev, add this to the repositories block in build.gradle:
 
     maven {
-        // Blame and Resourceful Bees
+        // FeatureNBTDeadlockBeGone
         url "https://nexus.resourcefulbees.com/repository/maven-public/"
     }
 
