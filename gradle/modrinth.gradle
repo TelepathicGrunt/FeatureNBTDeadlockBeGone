@@ -17,7 +17,7 @@ String fileContents = new File("./", "CHANGELOG.md").text
 task publishModrinth (type: TaskModrinthUpload){
     token = "$System.env.MODRINTH"
     projectId = '38tpSycf'
-    versionName = "Feature NBT Deadlock Be Gone"
+    versionName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.minecraft_version} MC)"
     versionNumber = project.version
     uploadFile = jar
     changelog = fileContents
