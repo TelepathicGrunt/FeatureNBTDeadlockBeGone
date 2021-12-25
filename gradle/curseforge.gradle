@@ -1,17 +1,35 @@
 apply plugin: "com.matthewprenger.cursegradle"
 
+String fileContents = new File("./", "CHANGELOG.md").text
+//file('CHANGELOG.md')
+
+
 curseforge {
     project {
         apiKey = "$System.env.CURSEFORGEKEY"
-        id = "362479"
-        releaseType = "release"
+        id = "363949"
+        releaseType = "beta"
         changelogType = 'markdown'
-        changelog = file('CHANGELOG.md')
+        changelog = fileContents
         addGameVersion("1.18.1")
-        addGameVersion("Forge")
+        addGameVersion("Fabric")
 
-        mainArtifact(jar) {
-            displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.mc_version} MC)"
+        relations {
+            requiredDependency 'cloth-config'
+            requiredDependency 'cardinal-components'
+            requiredDependency 'fabric-api'
         }
+
+        mainArtifact(remapJar) {
+            displayName = "The Bumblezone v${project.mod_version} (${project.minecraft_version} MC)"
+        }
+
+        afterEvaluate {
+            uploadTask.dependsOn("remapJar")
+        }
+    }
+    options {
+        //debug = true
+        forgeGradleIntegration = false
     }
 }

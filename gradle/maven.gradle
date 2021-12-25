@@ -1,25 +1,35 @@
-jar.finalizedBy('reobfJar')
+apply plugin: 'maven-publish'
+
+task apiJar(type: Jar, dependsOn: classes) {
+    from(sourceSets.main.output)
+    include 'the_bumblezone/**'
+}
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            artifact(remapJar) {
+                builtBy remapJar
+            }
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
 
             pom {
-                name = 'FeatureNBTDeadlockBeGone'
-                description = 'Fixes https://bugs.mojang.com/browse/MC-246262'
-                url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone'
+                name = 'TheBumblezone-Fabric'
+                description = 'An unBEElievable dimension full of bees that becomes REALLY angry if you take their honey!'
+                url = 'https://github.com/TelepathicGrunt/Bumblezone-Fabric'
 
                 scm {
-                    connection = 'git:https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone.git'
-                    developerConnection = 'git:https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone.git'
-                    url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone'
+                    connection = 'git:https://github.com/TelepathicGrunt/Bumblezone-Fabric.git'
+                    developerConnection = 'git:https://github.com/TelepathicGrunt/Bumblezone-Fabric.git'
+                    url = 'https://github.com/TelepathicGrunt/Bumblezone-Fabric'
                 }
 
                 licenses {
                     license {
-                        name = 'MIT'
-                        url = 'https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/LICENSE'
+                        name = 'GNU Lesser General Public License v3.0'
+                        url = 'https://github.com/TelepathicGrunt/Bumblezone-Fabric/LICENSE'
                     }
                 }
 
@@ -31,6 +41,7 @@ publishing {
                     }
                 }
             }
+
         }
     }
 
