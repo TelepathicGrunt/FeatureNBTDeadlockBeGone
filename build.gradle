@@ -11,6 +11,7 @@ buildscript {
 }
 
 plugins {
+	id "net.darkhax.curseforgegradle" version "1.0.7"
 	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'io.github.juuxel.loom-quiltflower-mini' version '1.1.0'
 }
@@ -35,6 +36,8 @@ dependencies {
 	}
 }
 
+apply from: 'gradle/processresources.gradle'
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
 	it.options.release = 17
@@ -49,8 +52,22 @@ jar {
 }
 
 apply from: 'gradle/maven.gradle'
-apply from: 'gradle/curseforge.gradle'
 apply from: 'gradle/modrinth.gradle'
+task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+	apiToken = "$System.env.CURSEFORGEKEY"
+	int projectId = 560323
+	String changelogText = new File("CHANGELOG.md").getText('UTF-8')
+
+	def mainFile = upload(projectId, remapJar)
+	mainFile.changelog = changelogText
+	mainFile.changelogType = "markdown"
+	mainFile.releaseType = "release"
+	mainFile.displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.minecraft_version} MC)"
+}
 
 task buildAndRelease{}
-tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.curseforge, tasks.publishModrinth)
+tasks.publish.mustRunAfter tasks.build
+tasks.publishCurseForge.mustRunAfter tasks.publish
+tasks.publishModrinth.mustRunAfter tasks.publish
+tasks.publishCurseForge.dependsOn("remapJar")
+tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.publishCurseForge, tasks.publishModrinth)
