@@ -29,7 +29,7 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "minecraft": ">=1.18.1"
+    "minecraft": ">=1.18.2-rc.1"
   },
   "custom": {
     "notify_gradle_properties_url": "https://raw.githubusercontent.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/fabric-1.18/gradle.properties",
