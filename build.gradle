@@ -12,14 +12,14 @@ buildscript {
         classpath group: 'gradle.plugin.com.modrinth.minotaur', name: 'Minotaur', version: '1.2.1'
     }
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
 
 plugins {
     id "net.darkhax.curseforgegradle" version "1.0.7"
 }
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = "${mod_version}+${mc_version}"
 group = "com.telepathicgrunt"
@@ -54,9 +54,7 @@ repositories {}
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-    if (System.getProperty("idea.sync.active") != "true") {
-        annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    }
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 apply from: 'gradle/manifest.gradle'
@@ -72,7 +70,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     int projectId = 560323
     String changelogText = new File("CHANGELOG.md").getText('UTF-8')
 
-    def mainFile = upload(projectId, remapJar)
+    def mainFile = upload(projectId, jar)
     mainFile.changelog = changelogText
     mainFile.changelogType = "markdown"
     mainFile.releaseType = "release"
@@ -83,5 +81,4 @@ task buildAndRelease{}
 tasks.publish.mustRunAfter tasks.build
 tasks.publishCurseForge.mustRunAfter tasks.publish
 tasks.publishModrinth.mustRunAfter tasks.publish
-tasks.publishCurseForge.dependsOn("remapJar")
 tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.publishCurseForge, tasks.publishModrinth)
