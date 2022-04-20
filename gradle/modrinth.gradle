@@ -16,12 +16,12 @@ String fileContents = new File("./", "CHANGELOG.md").text
 // Make sure it runs after build!
 task publishModrinth (type: TaskModrinthUpload) {
     token = "$System.env.MODRINTH"
-    versionName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.minecraft_version} MC Fabric)"
+    versionName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${project.minecraft_version} MC Quilt)"
     projectId = 'HMNV4z01'
-    versionNumber = project.version + "_fabric"
+    versionNumber = project.version + "_quilt"
     uploadFile = remapJar
     changelog = fileContents
-    addGameVersion("1.18.2-rc1")
-    addLoader('fabric')
+    addGameVersion("1.18.2")
+    addLoader("quilt")
 }
 
