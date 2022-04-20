@@ -1,16 +1,22 @@
 {
-  "schemaVersion": 1,
+  "schema_version": 1,
   "quilt_loader": {
     "group": "com.telepathicgrunt",
     "id": "feature_nbt_deadlock_be_gone",
     "version": "${version}",
     "metadata": {
-      "name": "Feature NBT Deadlock Be Gone - Fabric",
+      "name": "Feature NBT Deadlock Be Gone - Quilt",
       "description": "Fixes https://bugs.mojang.com/browse/MC-246262",
       "contributors": {
-        "TelepathicGrunt": "Owner"
+        "Me!": "TelepathicGrunt"
       },
-      "icon": "assets/feature_nbt_deadlock_be_gone/FNBTDBG.png"
+      "icon": "assets/feature_nbt_deadlock_be_gone/FNBTDBG.png",
+      "license": "MIT",
+      "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/feature-nbt-deadlock-be-gone",
+        "sources": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone",
+        "issues": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/issues"
+      }
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
@@ -19,11 +25,11 @@
     "depends": [
       {
         "id": "quilt_loader",
-        "versions": ">=0.16.0-"
+        "versions": ">=0.16.0"
       },
       {
         "id": "quilted_fabric_api",
-        "versions": ">=1.0.0-"
+        "versions": ">=1.0.0"
       },
       {
         "id": "minecraft",
@@ -31,15 +37,5 @@
       }
     ]
   },
-  "mixin": "feature_nbt_deadlock_be_gone.mixins.json",
-  "license": "MIT",
-  "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/feature-nbt-deadlock-be-gone",
-    "sources": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone",
-    "issues": "https://github.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/issues"
-  },
-  "custom": {
-    "notify_gradle_properties_url": "https://raw.githubusercontent.com/TelepathicGrunt/FeatureNBTDeadlockBeGone/fabric-1.18/gradle.properties",
-    "notify_gradle_properties_key": "mod_version"
-  }
+  "mixin": "feature_nbt_deadlock_be_gone.mixins.json"
 }
