@@ -58,7 +58,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 
 	def mainFile = upload(projectId, remapJar)
 	disableVersionDetection()
-	mainFile.addGameVersion("1.19-Snapshot")
+	mainFile.addGameVersion("1.18.2")
 
 	mainFile.changelog = changelogText
 	mainFile.changelogType = "markdown"
