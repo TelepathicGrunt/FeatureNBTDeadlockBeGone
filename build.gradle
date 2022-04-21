@@ -63,7 +63,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 	mainFile.changelog = changelogText
 	mainFile.changelogType = "markdown"
 	mainFile.releaseType = "alpha"
-	mainFile.displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${libs.versions.minecraft.get()} MC)"
+	mainFile.displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${libs.versions.minecraft.get()} MC Quilt)"
 }
 
 task buildAndRelease{}
