@@ -14,7 +14,7 @@ plugins {
 	id "net.darkhax.curseforgegradle" version "1.0.7"
 }
 
-version = "${project.mod_version}+${libs.versions.minecraft}"
+version = "${project.mod_version}+${libs.versions.minecraft.get()}"
 archivesBaseName = "${project.modid}_quilt"
 group = project.maven_group
 
@@ -63,7 +63,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 	mainFile.changelog = changelogText
 	mainFile.changelogType = "markdown"
 	mainFile.releaseType = "release"
-	mainFile.displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${libs.versions.minecraft} MC)"
+	mainFile.displayName = "Feature NBT Deadlock Be Gone v${project.mod_version} (${libs.versions.minecraft.get()} MC)"
 }
 
 task buildAndRelease{}
