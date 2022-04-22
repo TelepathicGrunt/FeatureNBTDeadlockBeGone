@@ -57,8 +57,6 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 	String changelogText = new File("CHANGELOG.md").getText('UTF-8')
 
 	def mainFile = upload(projectId, remapJar)
-	disableVersionDetection()
-	mainFile.addGameVersion("1.18.2")
 
 	mainFile.changelog = changelogText
 	mainFile.changelogType = "markdown"
