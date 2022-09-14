@@ -17,4 +17,4 @@ Fixes https://bugs.mojang.com/browse/MC-246262
 [[dependencies.feature_nbt_deadlock_be_gone]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,)"
+    versionRange="[1.18.2]"
